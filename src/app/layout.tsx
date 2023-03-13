@@ -1,4 +1,8 @@
+'use client';
+
 import './globals.css'
+import { ThemeProvider, withTheme } from '@emotion/react'
+import { theme } from '@/app/components/design'
 
 export default function RootLayout({
   children,
@@ -12,7 +16,9 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+        <ThemeProvider theme={theme}>
+          <body>{children}</body>
+        </ThemeProvider>
     </html>
   )
 }

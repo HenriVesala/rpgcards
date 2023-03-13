@@ -1,0 +1,26 @@
+import React from 'react'
+import styled from '@emotion/styled'
+import { HitCard as HitCardProps } from './types'
+import { Border, Footer, Title } from '../components'
+
+interface Props {
+  card: HitCardProps
+}
+
+export const HitCard: React.FC<Props> = ({ card }) => {
+  const { title, footer, type } = card
+  return (
+    <Border>
+      <Title>
+        {title} {type}
+      </Title>
+      <CardArea>tussi</CardArea>
+      <Footer>{footer}</Footer>
+    </Border>
+  )
+}
+
+const CardArea = styled.div`
+  background-color: blue;
+  height: 5em;
+`
